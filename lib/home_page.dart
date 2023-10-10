@@ -1,3 +1,5 @@
+import 'package:doctor_app/constants.dart';
+import 'package:doctor_app/doctor_card.dart';
 import 'package:doctor_app/topic_card_section.dart';
 import 'package:flutter/material.dart';
 
@@ -22,109 +24,55 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-      body: Container(
-        padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
-        child: Column(
-          children: <Widget>[
-            HomeTitle(),
-            SizedBox(height: 21),
-            HomeSearch(),
-            SizedBox(height: 21),
-            TopicCardsSection(),
-            SizedBox(height: 26),
-            HeaderTopDoctor(),
-            SizedBox(height: 21),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Container(
-                  child: Row(
-                    children: [
-                      Container(
-                        height: 80,
-                        width: 88,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(12),
-                          child: Image.asset(
-                            "assets/images/doctor1.png",
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                      SizedBox(width: 15),
-                      DoctorCard()
-                    ],
+      body: SingleChildScrollView(
+        child: Container(
+          padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
+          child: Column(
+            children: <Widget>[
+              HomeTitle(),
+              SizedBox(height: 21),
+              HomeSearch(),
+              SizedBox(height: 21),
+              TopicCardsSection(),
+              SizedBox(height: 26),
+              HeaderTopDoctor(),
+              SizedBox(height: 15),
+              Column(
+                children: [
+                  DoctorCard(
+                    image: "assets/images/doctor1.png",
+                    name: 'dr. Gilang Segara Bening',
+                    specialty: 'Heart   •   Persahabatan Hospital',
+                    ratings: '1221',
+                    notice: openCard,
                   ),
-                )
-              ],
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class DoctorCard extends StatelessWidget {
-  const DoctorCard({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Text(
-          'dr. Gilang Segara Bening',
-          style: TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
+                  DoctorCard(
+                    image: "assets/images/doctor2.png",
+                    name: 'dr. Shabil Chan',
+                    specialty: 'Dental   •   Columbia Asia Hospital',
+                    ratings: '964',
+                    notice: openCard,
+                  ),
+                  DoctorCard(
+                    image: "assets/images/doctor3.png",
+                    name: 'dr. Mustakim',
+                    specialty: 'Eye   •   Salemba Carolus Hospital',
+                    ratings: '762',
+                    notice: closeCard,
+                  ),
+                  DoctorCard(
+                    image: "assets/images/doctor4.png",
+                    name: 'dr. Suprihatini',
+                    specialty: 'Heart   •   Salemba Carolus Hospital',
+                    ratings: '762',
+                    notice: openCard,
+                  ),
+                ],
+              ),
+            ],
           ),
         ),
-        SizedBox(height: 4),
-        Text(
-          'Heart   •   Persahabatan Hospital',
-          style: TextStyle(fontSize: 14, color: Color(0xFFAAAAAA)),
-        ),
-        SizedBox(height: 10),
-        Row(
-          children: <Widget>[
-            Row(
-              children: <Widget>[
-                Icon(Icons.star, size: 11.5, color: Color(0xFFFFE848)),
-                SizedBox(width: 3),
-                Icon(Icons.star, size: 11.5, color: Color(0xFFFFE848)),
-                SizedBox(width: 3),
-                Icon(Icons.star, size: 11.5, color: Color(0xFFFFE848)),
-                SizedBox(width: 3),
-                Icon(Icons.star, size: 11.5, color: Color(0xFFFFE848)),
-                SizedBox(width: 3),
-                Icon(Icons.star, size: 11.5, color: Color(0xFFFFE848)),
-                SizedBox(width: 5),
-                Text(
-                  '(1221)',
-                  style: TextStyle(fontSize: 10, color: Color(0xFFC4C4C4)),
-                ),
-              ],
-            ),
-            SizedBox(width: 54),
-            Container(
-              padding: EdgeInsets.fromLTRB(0, 4, 0, 7),
-              alignment: Alignment.center,
-              width: 56,
-              decoration: BoxDecoration(
-                  color: Color(0xFFCCF5E1),
-                  borderRadius: BorderRadius.circular(5)),
-              child: Text(
-                'Open',
-                style: TextStyle(fontSize: 12, color: Color(0xFF00CC6A)),
-              ),
-            ),
-          ],
-        )
-      ],
+      ),
     );
   }
 }
