@@ -14,8 +14,6 @@ class MyApp extends StatelessWidget {
       title: 'Doctor App',
       theme: ThemeData(
         fontFamily: 'Lato',
-        colorScheme: ColorScheme.fromSeed(
-            seedColor: const Color.fromRGBO(255, 255, 255, 1)),
       ),
       home: HomePage(),
     );
