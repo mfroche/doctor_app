@@ -33,7 +33,7 @@ class TopicCard extends StatelessWidget {
             Text(
               topic,
               style: TextStyle(
-                fontSize: 13,
+                fontSize: 12.5,
               ),
             ),
           ],

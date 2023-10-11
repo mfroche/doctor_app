@@ -16,7 +16,16 @@ class DoctorCardSection extends StatelessWidget {
           onTap: () {
             Navigator.of(context).push(
               MaterialPageRoute(builder: (context) {
-                return DoctorPage();
+                return DoctorPage(
+                  image: 'assets/images/doctor1.png',
+                  name: 'dr. Gilang Segara Bening',
+                  specialty: 'Heart   •   Persahabatan Hospital',
+                  info:
+                      "dr. Gilang is one of the best doctors in the Persahabatan Hospital. He has saved more than 1000 patients in the past 3 years. He has also received many awards from domestic and abroad as the best doctors. He is available on a private or schedule.",
+                  yr: '3',
+                  ps: '1221',
+                  rating: '5.5',
+                );
               }),
             );
           },

@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Doctor App',
       theme: ThemeData(
         fontFamily: 'Lato',
+        useMaterial3: true,
       ),
       home: HomePage(),
     );
