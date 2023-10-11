@@ -37,26 +37,80 @@ class DoctorCardSection extends StatelessWidget {
             notice: openCard,
           ),
         ),
-        DoctorCard(
-          image: "assets/images/doctor2.png",
-          name: 'dr. Shabil Chan',
-          specialty: 'Dental   •   Columbia Asia Hospital',
-          ratings: '964',
-          notice: openCard,
+        GestureDetector(
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) {
+                return DoctorPage(
+                  image: 'assets/images/doctor2.png',
+                  name: 'dr. Shabil Chan',
+                  specialty: 'Dental   •   Columbia Asia Hospital',
+                  info:
+                      "dr. Gilang is one of the best doctors in the Columbia Asia Hospital. She has saved more than 1000 patients in the past 5 years. She has also received many awards from domestic and abroad as the best doctors. She is available on a private or schedule.",
+                  yr: '5',
+                  ps: '964',
+                  rating: '5',
+                );
+              }),
+            );
+          },
+          child: DoctorCard(
+            image: "assets/images/doctor2.png",
+            name: 'dr. Shabil Chan',
+            specialty: 'Dental   •   Columbia Asia Hospital',
+            ratings: '964',
+            notice: openCard,
+          ),
         ),
-        DoctorCard(
-          image: "assets/images/doctor3.png",
-          name: 'dr. Mustakim',
-          specialty: 'Eye   •   Salemba Carolus Hospital',
-          ratings: '762',
-          notice: closeCard,
+        GestureDetector(
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) {
+                return DoctorPage(
+                  image: 'assets/images/doctor3.png',
+                  name: 'dr. Mustakim',
+                  specialty: 'Eye   •   Salemba Carolus Hospital',
+                  info:
+                      "dr. Mustakim is one of the best doctors in the Salemba Carolus Hospital. He has saved more than 1000 patients in the past 5 years. He has also received many awards from domestic and abroad as the best doctors. He is available on a private or schedule.",
+                  yr: '5',
+                  ps: '762',
+                  rating: '5.5',
+                );
+              }),
+            );
+          },
+          child: DoctorCard(
+            image: "assets/images/doctor3.png",
+            name: 'dr. Mustakim',
+            specialty: 'Eye   •   Salemba Carolus Hospital',
+            ratings: '762',
+            notice: closeCard,
+          ),
         ),
-        DoctorCard(
-          image: "assets/images/doctor4.png",
-          name: 'dr. Suprihatini',
-          specialty: 'Heart   •   Salemba Carolus Hospital',
-          ratings: '762',
-          notice: openCard,
+        GestureDetector(
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) {
+                return DoctorPage(
+                  image: 'assets/images/doctor4.png',
+                  name: 'dr. Suprihatini',
+                  specialty: 'Heart   •   Salemba Carolus Hospital',
+                  info:
+                      "dr. Suprihatini is one of the best doctors in the Salemba Carolus Hospital. She has saved more than 1000 patients in the past 5 years. She has also received many awards from domestic and abroad as the best doctors. She is available on a private or schedule.",
+                  yr: '5',
+                  ps: '762',
+                  rating: '5',
+                );
+              }),
+            );
+          },
+          child: DoctorCard(
+            image: "assets/images/doctor4.png",
+            name: 'dr. Suprihatini',
+            specialty: 'Heart   •   Salemba Carolus Hospital',
+            ratings: '762',
+            notice: openCard,
+          ),
         ),
       ],
     );

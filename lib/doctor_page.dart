@@ -49,43 +49,71 @@ class DoctorPage extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Image.asset(
-                image,
-                fit: BoxFit.cover,
-              ),
-              Container(
-                padding: EdgeInsets.all(15),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    SizedBox(height: 7),
-                    Text(
-                      name,
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w800,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Image.asset(
+              image,
+              fit: BoxFit.cover,
+            ),
+            Container(
+              padding: EdgeInsets.all(15),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  SizedBox(height: 7),
+                  Text(
+                    name,
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
+                  ),
+                  SizedBox(height: 4),
+                  Text(
+                    specialty,
+                    style: TextStyle(fontSize: 14, color: Color(0xFFAAAAAA)),
+                  ),
+                  SizedBox(height: 16),
+                  Text(
+                    info,
+                    style: TextStyle(
+                        height: 1.3, fontSize: 16, color: Color(0xFFC4C4C4)),
+                  ),
+                  SizedBox(height: 21),
+                  SpecialtySection(yr: yr, ps: ps, rating: rating),
+                  SizedBox(height: 24),
+                  Row(
+                    children: <Widget>[
+                      Container(
+                        width: 50,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          color: Color(0xFF4485FD),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Image.asset("assets/icons/Icons-Comment.png"),
                       ),
-                    ),
-                    SizedBox(height: 4),
-                    Text(
-                      specialty,
-                      style: TextStyle(fontSize: 14, color: Color(0xFFAAAAAA)),
-                    ),
-                    SizedBox(height: 16),
-                    Text(
-                      info,
-                      style: TextStyle(
-                          height: 1.3, fontSize: 16, color: Color(0xFFC4C4C4)),
-                    ),
-                    SizedBox(height: 21),
-                    SpecialtySection(yr: yr, ps: ps, rating: rating)
-                  ],
-                ),
-              )
-            ]),
+                      SizedBox(width: 13),
+                      Expanded(
+                        child: Container(
+                          height: 50,
+                          decoration: BoxDecoration(
+                            color: Color(0xFF00CC6A),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Center(
+                            child: Text(
+                              'Make an Appointment',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
+                  )
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

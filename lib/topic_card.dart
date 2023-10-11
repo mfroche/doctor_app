@@ -25,7 +25,9 @@ class TopicCard extends StatelessWidget {
               width: 55,
               decoration: BoxDecoration(
                   color: color, borderRadius: BorderRadius.circular(10)),
-              child: Image.asset(image),
+              child: Image.asset(
+                image,
+              ),
             ),
             SizedBox(
               height: 9,

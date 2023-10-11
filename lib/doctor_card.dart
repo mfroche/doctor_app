@@ -81,7 +81,7 @@ class DoctorCard extends StatelessWidget {
                           ),
                         ],
                       ),
-                      SizedBox(width: 54),
+                      SizedBox(width: 20),
                       notice,
                     ],
                   )
