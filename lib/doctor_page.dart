@@ -20,7 +20,6 @@ class DoctorPage extends StatelessWidget {
           ),
         ],
       ),
-      body: 
     );
   }
 }

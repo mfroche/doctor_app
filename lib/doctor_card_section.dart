@@ -1,5 +1,6 @@
 import 'package:doctor_app/constants.dart';
 import 'package:doctor_app/doctor_card.dart';
+import 'package:doctor_app/doctor_page.dart';
 import 'package:flutter/material.dart';
 
 class DoctorCardSection extends StatelessWidget {
@@ -11,12 +12,21 @@ class DoctorCardSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        DoctorCard(
-          image: "assets/images/doctor1.png",
-          name: 'dr. Gilang Segara Bening',
-          specialty: 'Heart   •   Persahabatan Hospital',
-          ratings: '1221',
-          notice: openCard,
+        GestureDetector(
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) {
+                return DoctorPage();
+              }),
+            );
+          },
+          child: DoctorCard(
+            image: "assets/images/doctor1.png",
+            name: 'dr. Gilang Segara Bening',
+            specialty: 'Heart   •   Persahabatan Hospital',
+            ratings: '1221',
+            notice: openCard,
+          ),
         ),
         DoctorCard(
           image: "assets/images/doctor2.png",
